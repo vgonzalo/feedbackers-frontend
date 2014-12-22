@@ -1,0 +1,7 @@
+{
+  "ENV": {
+    "name": "production",
+    "baseUrl": "http://feedbackers.heroku.com",
+    "apiPath": "/api/v1/" 
+  }
+}

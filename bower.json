@@ -1,0 +1,27 @@
+{
+  "name": "feedbackers",
+  "version": "0.0.0",
+  "dependencies": {
+    "jquery": "*",
+    "angular": "*",
+    "angular-resource": "*",
+    "angular-cookies": "*",
+    "angular-sanitize": "*",
+    "angular-animate": "*",
+    "angular-ui-utils": "*",
+    "angular-bootstrap": "*",
+    "angular-ui-router": "*",
+    "ng-grid": "*",
+    "font-awesome": "~4.2.0",
+    "angular-flash": "~0.1.13",
+    "angular-bootstrap-show-errors": "~2.0.0",
+    "bootstrap-sass-official": "~3.3.1",
+    "angularjs-toaster": "~0.4.9",
+    "angular-gettext": "~1.1.4"
+  },
+  "devDependencies": {
+    "angular-mocks": "*",
+    "angular-scenario": "*"
+  },
+  "overrides": {}
+}

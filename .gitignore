@@ -1,0 +1,8 @@
+.idea
+node_modules
+bower_components/
+build/
+cdn/
+scss/
+app/js/config.js
+.awspublish-launch.smartfinapp.com
