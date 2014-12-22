@@ -11,6 +11,7 @@ var gulp        = require('gulp'),
 	map         = require('map-stream'),
 	browserSync = require('browser-sync'),
 	runSequence = require('run-sequence'),
+	bb          = require('bitballoon'),
 	awspublish  = require('gulp-awspublish'),
 	ngConstant  = require('gulp-ng-constant'),
 	gulpPlugins = require('gulp-load-plugins')(),
@@ -462,6 +463,22 @@ gulp.task('bs', function () {
 	});
 });
 
+/*============================================================
+=                    BitBalloon Publish                      =
+============================================================*/
+
+gulp.task('bb:publish', function () {	
+	return bb.deploy({
+		access_token: '12b439dc1c0687be3ac671f8bdc8849769d846df7fbac68b54296d71b002637c',
+		site_id: '1be7971c-6115-4f5f-b399-5b6fc62cd019',
+		dir: SETTINGS.cdn
+	}, function (err, deploy) {
+		if (err) {
+			throw (err);
+		}
+	});
+});
+
 
 /*============================================================
 =                       AWS Publish                          =
@@ -469,11 +486,13 @@ gulp.task('bs', function () {
 
 gulp.task('aws:publish', function () {
 
+	var awsconfig = require('./awsconfig.json');
+
 	// create a new publisher
 	var publisher = awspublish.create({
-		key:    '',
-		secret: '',
-		bucket: 'feedbackers.evis.cl'
+		key:    awsconfig.AWS_KEY,
+		secret: awsconfig.AWS_SECRET,
+		bucket: awsconfig.BUCKET
 	});
 
 	// define custom headers

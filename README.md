@@ -8,12 +8,6 @@ Installation
 ------------
 
 
-Install [Boom Angular Generator](https://npmjs.org/package/generator-boom)
-
-```sh
-    npm install -g generator-boom
-```
-
 You might need to install gulp globally
 
 ```sh
@@ -41,8 +35,20 @@ Run in production mode
 ```
 
 
-Publish to CDN
---------------
+Publish to S3
+-------------
+
+First you need to create in the root directory a file called awsconfig.json and define the Access Key, the Access Secret Key and the bucket name with the following example:
+
+```
+{
+  "AWS_KEY" : "AKIAJZ6WCT6RPN6UOOPAS",
+  "AWS_SECRET" : "ahAu3BPD4213BdIx0e5lrZoVxDF1WALN/3ASDW",
+  "BUCKET" : "feedbackers.evis.cl"
+}
+```
+
+Then just run:
 
 
 ```

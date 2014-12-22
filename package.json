@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "dependencies": {},
   "devDependencies": {
+    "bitballoon": "^0.2.1",
     "browser-sync": "~0.5.7",
     "chalk": "^0.4.0",
     "coffeelint-stylish": "^0.1.1",
