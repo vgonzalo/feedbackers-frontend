@@ -43,7 +43,7 @@ app.config [
     $httpProvider.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
     
     # Default route
-    $urlRouterProvider.otherwise '/survey'
+    $urlRouterProvider.otherwise '/dashboard'
     
     # Routes using states
     $stateProvider
@@ -57,17 +57,30 @@ app.config [
       resolve:
         survey_request: [
           '$http'
-          '$log'
           '$stateParams'
-          ($http, $log, $stateParams) ->
+          ($http, $stateParams) ->
             return $http.get "#{app.api}surveys/code/#{$stateParams.code}"
         ]
       controller: [
-        '$log'
         '$scope'
         'survey_request',
-        ($log, $scope, survey_request) ->
+        ($scope, survey_request) ->
           $scope.survey_data = survey_request.data
+      ]
+    .state 'app.dashboard',
+      url: '/dashboard'
+      templateUrl: 'templates/dashboard.html'
+      resolve:
+        companies_request: [
+          '$http'
+          ($http) ->
+            return $http.get "#{app.api}companies"
+        ]
+      controller: [
+        '$scope'
+        'companies_request',
+        ($scope, companies_request) ->
+          $scope.companies_data = companies_request.data
       ]
 ]
 

@@ -1,0 +1,44 @@
+<div class="hbox hbox-auto-xs hbox-auto-sm" ng-controller="DashboardCtrl">
+  <!-- main -->
+  <div class="col">
+    <!-- main header -->
+    <div class="bg-light lter b-b wrapper-md">
+      <div class="row">
+        <div class="col-xs-12 col-sm-4">
+          <h1 class="m-n font-thin h3 text-black">Dashboard</h1>
+          <small class="text-muted">List of answers</small>
+        </div>
+      </div>
+    </div>
+    <!-- / main header -->
+    <div class="wrapper-md">
+      <div class="row" ng-repeat="company in companies">
+        <div class="col-sm-12 m-b-lg text-left">
+          <span class="h2 font-thin">{{company.name}}</span>
+        </div>
+        <div class="col-sm-12 m-b-lg text-left" ng-repeat="question in company.questions">
+          <span class="h3 font-thin m-b-md block">{{question.title}}</span>
+          <ul ng-if="question.question_type === 'quality'">
+            <li class="h4 font-thin">
+              Mean Score: {{question.answer_data.value}}
+            </li>
+          </ul>
+          <ul ng-if="question.question_type === 'select' || question.question_type === 'checkbox'">
+            <li class="h4 font-thin m-b-sm" ng-repeat="item in question.answer_data.items">
+              {{item.title}}: {{item.count}}
+            </li>
+          </ul>
+        </div>
+        <div class="col-sm-12 m-b-lg text-left" ng-if="company.messages.length > 0">
+          <span class="h3 font-thin m-b-md block">Customer messages</span>
+          <ul>
+            <li class="h4 font-thin m-b-sm" ng-repeat="message in company.messages">
+              {{message}}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- / main -->
+</div>
