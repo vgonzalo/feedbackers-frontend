@@ -3,57 +3,68 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"X-Generator: Poedit 1.6.11\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Language: es\n"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step2.html
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step3.html
 msgid "BACK"
-msgstr ""
+msgstr "ATRÁS"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step3.html
 msgid "FINISH"
-msgstr ""
+msgstr "TERMINAR"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step1.html
 msgid "Hi {{customer.name}}!"
-msgstr ""
+msgstr "¡Hola {{customer.name}}!"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step3.html
 msgid "If you have any additional comment please write it below"
-msgstr ""
+msgstr "Si tienes algún comentario adicional por favor escríbelo abajo"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step1.html
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step2.html
 msgid "NEXT"
-msgstr ""
+msgstr "SIGUIENTE"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step1.html
 msgid "Please select the employee who has attended you"
-msgstr ""
+msgstr "Por favor selecciona el empleado que te atendió"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/footer.html
 msgid "Privacy"
-msgstr ""
+msgstr "Privacidad"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey.html
 msgid "Step"
-msgstr ""
+msgstr "Paso"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/finished.html
 msgid "Thank you for complete the survey!"
-msgstr ""
+msgstr "¡Gracias por completar la encuesta!"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step1.html
 msgid "Thanks for visit our store"
-msgstr ""
+msgstr "Gracias por visitar nuestra tienda"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/footer.html
 msgid "Unsubscribe"
-msgstr ""
+msgstr "Desuscribir"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey/step1.html
-msgid "We want to ask you some questions in order to improve our customers service."
+msgid ""
+"We want to ask you some questions in order to improve our customers service."
 msgstr ""
+"Queremos hacerte algunas preguntas para poder mejorar nuestro servicio al "
+"cliente"
 
 #: /Users/gonzalo/Consultoria/Survey/frontend/app/templates/survey.html
 msgid "{{vars.current_step}} of 3"
-msgstr ""
+msgstr "{{vars.current_step}} de 3"

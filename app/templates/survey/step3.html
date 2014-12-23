@@ -1,0 +1,20 @@
+<div class="row m-n">
+  <div class="col-xs-12 text-center m-t-md">
+    <span class="h3 font-thin block m-b-lg" translate>If you have any additional comment please write it below</span>
+  </div>
+  <div class="col-xs-12 col-md-8 col-md-offset-2">
+    <textarea class="form-control" rows="5" ng-model="feedback.message"></textarea>
+  </div>
+</div>
+<div class="row b-b m-n">
+  <div class="col-xs-12 col-sm-6 col-md-3 wrapper-lg">
+    <a ng-click="">
+      <div class="round-button" ng-click="vars.current_step = 2" translate>BACK</div>
+    </a>
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-6 wrapper-lg">
+    <a ng-click="">
+      <div class="round-button" ng-click="finish()" translate>FINISH</div>
+    </a>
+  </div>
+</div>

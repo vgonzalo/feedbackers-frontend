@@ -52,9 +52,23 @@ app.config [
       url: ''
       templateUrl: 'templates/app.html'
     .state 'app.survey',
-      url: '/survey'
+      url: '/survey/:code'
       templateUrl: 'templates/survey.html'
-      conroller: 'SurveyCtrl'
+      resolve:
+        survey_request: [
+          '$http'
+          '$log'
+          '$stateParams'
+          ($http, $log, $stateParams) ->
+            return $http.get "#{app.api}surveys/code/#{$stateParams.code}"
+        ]
+      controller: [
+        '$log'
+        '$scope'
+        'survey_request',
+        ($log, $scope, survey_request) ->
+          $scope.survey_data = survey_request.data
+      ]
 ]
 
 #
@@ -69,9 +83,7 @@ app.run [
     gettextCatalog
     $log
   ) ->
-    'use strict'
-    gettextCatalog.setCurrentLanguage 'es'
-    $log.info 'PRUEBA'
+    gettextCatalog.setCurrentLanguage 'en'
 ]
 
 # ---> Do not delete this comment (Values) <---

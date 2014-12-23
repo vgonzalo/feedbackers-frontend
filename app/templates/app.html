@@ -3,37 +3,4 @@
   <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
 </div>
 <!-- / toaster -->
-<!-- navbar -->
-<div class="navbar bg-dark text-center text-white">
-  <div class="row m-n">
-    <div class="col-xs-3 bg-medium no-padder">
-      <a class="btn no-shadow navbar-btn hbox">
-        <div class="col v-middle text-white">
-          <p class="h4 font-normal ">Step</p>
-          <p class="h3 font-normal">2 of 3</p>
-        </div>
-      </a>
-    </div>
-    <div class="col-xs-6">
-      <div class="hbox">
-        <div class="col v-middle h2">
-          <p class="m-md">VERIZON</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-xs-3 bg-medium no-padder">
-      <a class="btn no-shadow navbar-btn hbox">
-        <p class="h3 font-normal col v-middle text-white">Español</p>
-      </a>
-    </div>
-  </div>
-</div>
-<!-- / navbar -->
-
-<!-- content -->
-<div class="app-content m-n h-full" ng-controller="AppCtrl">
-  <div class="app-content-body app-content-full fade-in-up h-full" ui-view>
-  </div>
-</div>
-<!-- /content --> 
-<div ui-butterbar></div>
+<div ng-controller="AppCtrl" ui-view></div>

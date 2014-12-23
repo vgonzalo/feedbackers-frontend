@@ -1,49 +1,49 @@
-<section class="main" ng-controller="SurveyCtrl">
-  <div class="hbox hbox-auto-xs">
-    <div class="col">
-      <div class="wrapper-md">
-        <div ng-repeat="question in questions">
-          <div class="row m-n">
-            <div class="col-xs-12 text-center m-t-md">
-              <span class="h3 font-normal">{{question.title}}</span>
-            </div>
-          </div>
-          <div class="row wrapper-lg b-b m-n">
-            <div class="col-xs-2-4 no-padder m-b-md" ng-repeat="score in scores">
-              <div class="text-center">
-                <a class="circle" ng-class="(score.number <= question.score) ? score.style : ''" ng-click="question.score = score.number">
-                  <span class="inline font-normal">{{score.number}}</span>
-                  <span class="inline small m-l-n-xs">%</span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row b-b m-n">
-          <div class="col-xs-12 col-sm-6 wrapper-lg">
-            <a ng-click="">
-              <div class="round-button">BACK</div>
-            </a>
-          </div>
-          <div class="col-xs-12 col-sm-6 wrapper-lg">
-            <a ng-click="">
-              <div class="round-button">NEXT</div>
-            </a>
-          </div>
-        </div>
-        <div class="row m-n">
-          <div class="col-xs-4 wrapper-lg">
-            <a ng-click="">
-              <div class="round-button-small">Unsubscribe</div>
-            </a>
-          </div>
-          <div class="col-xs-4 col-xs-offset-4 text-right  wrapper-lg">
-            <a ng-click="">
-              Privacy
-            </a>
+<div ng-controller="SurveyCtrl">
+  <!-- navbar -->
+  <div class="navbar bg-dark text-center text-white">
+    <div class="row m-n">
+      <div class="col-xs-3 bg-medium no-padder">
+        <div class="no-shadow navbar-btn hbox" ng-if="vars.current_step > 0 && vars.current_step < 4">
+          <div class="col v-middle text-white">
+            <p class="h4 font-normal" translate>Step</p>
+            <p class="h3 font-normal" translate>{{vars.current_step}} of 3</p>
           </div>
         </div>
       </div>
+      <div class="col-xs-6">
+        <div class="hbox">
+          <div class="col v-middle h2">
+            <p class="m-md">{{company.name.toUpperCase()}}</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-3 bg-medium no-padder">
+        <a class="no-shadow navbar-btn hbox" ng-click="changeLanguage()">
+          <p class="h3 font-normal col v-middle text-white">{{change_language_text}}</p>
+        </a>
+      </div>
     </div>
   </div>
-</section>
+  <!-- / navbar -->
+
+  <!-- content -->
+  <div class="app-content m-n h-full">
+    <div class="app-content-body app-content-full fade-in-up h-full">
+      <section class="main">
+        <div class="hbox hbox-auto-xs">
+          <div class="col">
+            <div class="wrapper-md">
+              <div ng-include="'templates/survey/invalid.html'"  ng-show="vars.current_step === 0"></div>
+              <div ng-include="'templates/survey/step1.html'"    ng-show="vars.current_step === 1"></div>
+              <div ng-include="'templates/survey/step2.html'"    ng-show="vars.current_step === 2"></div>
+              <div ng-include="'templates/survey/step3.html'"    ng-show="vars.current_step === 3"></div>
+              <div ng-include="'templates/survey/finished.html'" ng-show="vars.current_step === 4"></div>
+              <div ng-include="'templates/survey/footer.html'"></div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+  <!-- /content --> 
+</div>

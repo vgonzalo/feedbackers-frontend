@@ -1,0 +1,24 @@
+<div class="row m-n">
+  <div class="col-xs-12 text-center m-t-md">
+    <span class="h2 font-thin block m-b-sm" translate>Hi {{customer.name}}!</span>
+    <span class="h3 font-thin block m-b-lg" translate>Thanks for visit our store</span>
+    <span class="h3 font-thin block m-b-lg" translate>We want to ask you some questions in order to improve our customers service.</span>
+    <span class="h3 font-thin block m-b-lg" translate>Please select the employee who has attended you</span>
+  </div>
+  <div class="col-xs-12 m-b-md">
+    <div class="list-group text-center">
+      <a href class="list-group-item wrapper-sm" ng-repeat="user in company.users" ng-click="feedback.user_id = user.id" ng-class="{'active': feedback.user_id === user.id}">
+        <span class="h3 block font-thin">{{user.name}}</span>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="row b-b m-n">
+  <div class="col-xs-12 col-sm-6 col-md-3 wrapper-lg">
+  </div>
+  <div class="col-xs-12 col-sm-6 col-md-3 col-md-offset-6 wrapper-lg">
+    <a ng-click="">
+      <div class="round-button" ng-click="vars.current_step = 2" translate>NEXT</div>
+    </a>
+  </div>
+</div>
