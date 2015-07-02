@@ -1,6 +1,6 @@
 'use strict';
 
-var gulp        = require('gulp'),
+var gulp      = require('gulp'),
 	bowerFiles  = require('main-bower-files'),
 	stylish     = require('jshint-stylish'),
 	path        = require('path'),
@@ -23,9 +23,9 @@ var gulp        = require('gulp'),
 	gettext     = require('gulp-angular-gettext');
 
 // chalk config
-var errorLog  = chalk.red.bold,
-	hintLog   = chalk.blue,
-	changeLog = chalk.red;
+var errorLog = chalk.red.bold,
+	hintLog    = chalk.blue,
+	changeLog  = chalk.red;
 
 var	SETTINGS = {
 	src: {
@@ -72,7 +72,7 @@ var serverConfig = {
 // jsHint Options.
 var hintOptions = JSON.parse(fs.readFileSync('.jshintrc', 'utf8'));
 
-// Flag for generating production code.
+// Flag for production.
 var isProduction = args.type === 'production';
 
 /*============================================================
@@ -300,7 +300,7 @@ gulp.task('copy:fonts', function () {
 /*=========================================================================================================
 =												Watch
 
-	Incase the watch fails due to limited number of watches available on your sysmtem, the execute this
+	In case the watch fails due to limited number of watches available on your system, execute this
 	command on terminal
 
 	$ echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
@@ -501,8 +501,8 @@ gulp.task('aws:publish', function () {
 	};
 
 	var index_header = {
-        'Cache-Control': 'max-age=0, no-transform, public'
-    };
+    'Cache-Control': 'max-age=0, no-transform, public'
+  };
 
 	var assets_filter  = gulpPlugins.filter(['**/*.html', '**/*.js', '**/*.css']);
 	var index_filter   = gulpPlugins.filter(['**/index.html']);
@@ -514,7 +514,7 @@ gulp.task('aws:publish', function () {
 		.pipe(awspublish.gzip())
 		.pipe(assets_filter.restore())
 
-		// publisher will add Content-Length, Content-Type and  headers specified above
+		// publisher will add Content-Length, Content-Type and headers specified above
 		// If not specified it will set x-amz-acl to public-read by default
 		.pipe(noindex_filter)
 		.pipe(publisher.publish(headers))
