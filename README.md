@@ -1,7 +1,5 @@
-Feedbackers
-===========
-
---------
+Feedbackers (Frontend)
+======================
 
 
 Installation
@@ -38,7 +36,7 @@ Run in production mode
 Publish to S3
 -------------
 
-First you need to create in the root directory a file called awsconfig.json and define the Access Key, the Access Secret Key and the bucket name with the following example:
+First you need to create in the root directory a file called awsconfig.json and define the Access Key, the Access Secret Key and the bucket name as in the following example:
 
 ```
 {
